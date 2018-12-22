@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Sign up form</title>
+        <title>Order form</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     </head>
     <body>
 
-        <h1>Sign up to the event using this form</h1>
+        <h1>Order some stuff through this form</h1>
 
         <form action="#" th:action="@{/form}" method="POST">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
             <p><label for="name">Name</label>: <input type="text" name="name" id="name"/></p>
             <p><label for="address">Address</label>: <input type="text" name="address" id="address"/></p>
+            <p><label for="address">Item you want to buy, we sell everything</label>: <input type="text" name="product" id="product"/></p>
             <p><input type="submit" value="Submit" /></p>
         </form>
 
